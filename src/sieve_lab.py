@@ -1,3 +1,5 @@
+from src.pattern_engine import *  # Or specify the exact functions you need
+
 """
 sieve_lab.py - audit and compare the Pi-Phi "1/3 sieve" as a token pre-filter.  One file, numpy only (no torch).
 
