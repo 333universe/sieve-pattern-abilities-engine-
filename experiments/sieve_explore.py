@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.pattern_engine import PatternEngine
+
 """
 sieve_explore.py - what can the golden-ratio sieve do, as a stand-alone object?  numpy + scipy (+ matplotlib for --plot).
 
