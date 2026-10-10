@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.pattern_engine import PatternEngine
+
 """
 sieve_patterns.py - the golden-ratio sieve used as a small PATTERN ENGINE.  numpy only (+ matplotlib for --plot).
 
