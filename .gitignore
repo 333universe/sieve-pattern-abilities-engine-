@@ -1,9 +1,21 @@
-# Byte-compiled / optimized / DLL files
+# === Python Files ===
+# This stops Python from uploading messy byte-code files that it builds to run your code
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Android system files (avoids cluttering from phone file managers)
+# === Android & System Trash ===
+# Prevents hidden system tracking files from your phone or computers from clogging the repo
 .DS_Store
 Thumbs.db
 .thumbnails/
+.nomedia
+*~
+
+# === IDE & Code Editors ===
+# If you use code editor apps on your phone (like Acode or Termux editors), this ignores their local settings
+.project
+.idea/
+.vscode/
+*.swp
