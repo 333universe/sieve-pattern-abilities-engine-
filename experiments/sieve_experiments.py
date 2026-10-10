@@ -1,3 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.pattern_engine import PatternEngine  # adjust based on your actual class/function names
+from src.sieve_lab import SieveLab
+
 """
 sieve_experiments.py - stand-alone tests of the Pi-Phi "fixed" sieve (golden-ratio position filter).
 One file, numpy only.  Uses sieve_lab.py (same folder).
