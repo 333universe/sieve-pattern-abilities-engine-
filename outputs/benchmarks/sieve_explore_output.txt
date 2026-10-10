@@ -1,0 +1,77 @@
+A  2-D map: points at radius sqrt(n), angle 2*pi*frac(n*phi)   (N=1500)
+layout         min/mean NN  CV of NN   (even spread: min/mean near 1, CV near 0)
+golden spiral        0.945     0.014
+random               0.028     0.537
+square lattice       1.000     0.000
+
+B  points on a sphere: z = 1-(2i+1)/N, longitude = 2*pi*frac(i*phi)   (N=1000)
+layout      closest pair (deg)  largest hole (deg)   (want: closest pair big, hole small)
+golden                    5.60                4.60
+random                    0.15               11.12
+
+C  numerical integration with x_n = frac(n*phi)  (rms error over 100 trials for random)
+  f = exp(x)
+        N   golden err   random err
+       30     1.87e-02     9.02e-02
+      100     5.39e-04     5.17e-02
+      300     9.05e-04     2.48e-02
+     1000     8.20e-06     1.63e-02
+     3000     1.22e-05     9.08e-03
+    10000     7.93e-05     4.89e-03
+    30000     3.20e-05     2.96e-03
+  log-log slope: golden -0.85, random -0.50  (random is about -0.5; golden errors are not monotone but stay far below)
+  f = step x<0.3
+        N   golden err   random err
+       30     3.33e-02     9.33e-02
+      100     0.00e+00     4.35e-02
+      300     3.33e-03     2.39e-02
+     1000     0.00e+00     1.42e-02
+     3000     0.00e+00     8.34e-03
+    10000     1.00e-04     4.27e-03
+    30000     0.00e+00     2.52e-03
+  (golden error is 0 or about 1/N at every N shown; no slope fitted because exact zeros break a log fit)
+
+D  3-way bucket assignment of structured keys key = c*i (i=0..2999), worst imbalance over c=1..60
+  mod 3    worst imbalance 1.0000 at c=3
+  golden   worst imbalance 0.0130 at c=55
+  (imbalance = (largest bucket - smallest bucket)/N; mod 3 puts everything in one bucket whenever c is a multiple of 3)
+
+E  as a 3-voice pattern (x = voice plays on that step); voices never collide and are evenly spaced
+  voice 0: .x..x.x..x..x.x..x....x..x.x..x..x   gaps used [2, 3, 5]
+  voice 1: x..x....x..x.x..x..x.x..x....x..x.   gaps used [2, 3, 5]
+  voice 2: ..x..x.x..x....x..x.x..x..x.x..x..   gaps used [2, 3, 5]
+
+F  spectrum of the channel-0 pattern (N=4096): sharp lines at positions set by the golden ratio
+  golden    tallest line / median line =    304.5
+  stride-3  tallest line / median line =   1343.2
+  random    tallest line / median line =      3.5
+    k  predicted freq  predicted amp  measured freq  amp at that freq
+    1          0.3820         0.2757         0.3821        0.2757
+    2          0.2361         0.1378         0.2361        0.1379
+    4          0.4721         0.0689         0.4722        0.0689
+    5          0.0902         0.0551         0.0901        0.0550
+    3          0.1459         0.0000         0.1467        0.0001
+  (k=3 has predicted amplitude 0 because the keep share is exactly 1/3)
+
+G  1-bit dithering of a smooth ramp: rms error of local averages (lower is better)
+  threshold              W=8      W=32     W=128
+  fixed 0.5           0.2884    0.2875    0.2841
+  random              0.1485    0.0778    0.0412
+  golden              0.0560    0.0188    0.0059
+  van der Corput      0.0530    0.0161    0.0081
+
+H  pattern complexity: number of distinct length-L words in the channel sequence
+    L  golden  stride-3  max possible
+    1       3         3             3
+    2       6         3             9
+    3       9         3            27
+    4      12         3            81
+    5      15         3           243
+    6      18         3           729
+    7      21         3          2187
+    8      24         3          6561
+    9      27         3         19683
+   10      30         3         59049
+  (never repeats, yet has very few distinct patterns: the signature of a quasi-periodic sequence)
+
+wrote sieve_map.png

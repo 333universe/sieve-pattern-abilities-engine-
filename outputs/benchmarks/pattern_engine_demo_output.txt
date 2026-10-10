@@ -1,0 +1,32 @@
+create -> window from the middle (3% noise) -> recognise -> predict the next 200
+
+made     : {"family": "fibword", "K": 2, "shift": 17}
+pattern  : ..#.#..###..#..#.#..#.#..#..#.#..#..#.#..#.#..#..#.#..#..#.##.#.#..#..
+found    : fibword {"family": "fibword", "K": 2, "shift": 175}  | flagged 11 odd symbols | saved 226 bits
+predicted: next 200 symbols correct 100.0%
+
+made     : {"family": "rotation", "K": 2, "alpha": 0.573946, "offset": 0.0941}
+pattern  : .##.#.#.##.#.#..#.#.#.##.#.#..#.#.#..#.#.##.#.#.##.#.#.##.#.#.##.#.#.#
+found    : rotation {"family": "rotation", "K": 2, "alpha": 0.42602206678275534, "offset": 0.6808333333333333}  | flagged 6 odd symbols | saved 230 bits
+predicted: next 200 symbols correct 98.0%
+
+made     : {"family": "fibword", "K": 2, "shift": 43}
+pattern  : .#.#..#..#.#..#.#..##.#.#..#.#..#..#.#..#..#.#..#.#..#..#.#..#..#.#..#
+found    : fibword {"family": "fibword", "K": 2, "shift": 113}  | flagged 8 odd symbols | saved 241 bits
+predicted: next 200 symbols correct 100.0%
+
+made     : {"family": "loop", "K": 3, "word": [0, 2, 2, 0]}
+pattern  : ..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..@@..
+found    : loop {"family": "loop", "K": 3, "word": [0, 0, 2, 2]}  | flagged 4 odd symbols | saved 430 bits
+predicted: next 200 symbols correct 100.0%
+
+made     : {"family": "rotation", "K": 3, "alpha": 0.515066, "offset": 0.4306}
+pattern  : #.#.#.#.@.@.@#@.@.@#@#@#@#@#.#.#.#.#.#.#.@#@@@.@.@.@#@#@#@#@#@#.@.###.
+found    : rotation {"family": "rotation", "K": 3, "alpha": 0.5150610668618513, "offset": 0.0475}  | flagged 13 odd symbols | saved 358 bits
+predicted: next 200 symbols correct 100.0%
+
+made     : {"family": "rotation", "K": 4, "alpha": 0.714054, "offset": 0.9563}
+pattern  : #.##..@#.%#.%@#.%#.%@#.%#.%@#.%#.%@#.%%.%.#.%#.%@#.%#.%@#.%#.%%#.%#.%@
+found    : rotation {"family": "rotation", "K": 4, "alpha": 0.7140403105652313, "offset": 0.6295833333333334}  | flagged 11 odd symbols | saved 486 bits
+predicted: next 200 symbols correct 99.0%
+

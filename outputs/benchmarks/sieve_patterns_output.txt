@@ -1,0 +1,43 @@
+1  the dial: irrational alpha never repeats, rational alpha = p/q repeats exactly every q steps
+  alpha            first repeat (period)
+  golden                 none up to 1000
+  sqrt(2)                none up to 1000
+  3/8                                  8
+  5/13                                13
+  2/7                                  7
+  1/3 (float)            none up to 1000
+  1/3 (exact)                          3
+  (a float 1/3 misrounds exactly on channel boundaries and loses its loop; pass Fraction(1, 3) for exact loops)
+  (so one engine spans both families: Euclidean-rhythm style loops and non-repeating patterns)
+
+2  immediate repeats (same symbol twice in a row), n=10000
+    K   golden   random   (share of steps equal to the previous step)
+    2    0.236    0.496
+    3    0.000    0.330
+    4    0.000    0.254
+    5    0.000    0.200
+    6    0.000    0.170
+    7    0.000    0.146
+    8    0.000    0.126
+
+3  colours: closest pair of hues among N, scaled so a perfect even spread = 1.0 (higher is better)
+     N   golden   random
+     5     0.73     0.20
+    12     0.67     0.09
+    24     0.51     0.04
+    50     0.66     0.02
+   100     0.50     0.01
+  (the golden-angle hue trick is well known; this just confirms it holds for any N, and extends one list at a time)
+
+4  2-D textures 120x120, K=3: balance and variety of local patches
+  texture                share of ch 0/1/2  distinct 3x3 patches
+  stripes                0.333 0.333 0.333                    27
+  sum                    0.333 0.333 0.333                    27
+  periodic (x+y)%3       0.333 0.333 0.333                     3
+  random                 0.335 0.332 0.333                  9996
+  (random uses nearly every possible patch; periodic uses 3; the sieve sits in between: structured but not repeating)
+
+5  determinism and cost: same dials -> same pattern; any position computed alone
+  pattern at position 777 computed alone == inside a long strip: True
+
+wrote sieve_patterns.png

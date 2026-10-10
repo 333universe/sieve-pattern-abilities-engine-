@@ -1,0 +1,39 @@
+1  recognition of patterns the engine can make   (window of N symbols from a random position)
+  family        N  noise  trials  recognised  right family   predict next 400 (mean / worst)
+  rotation    300   0.00      40        100%           98%                     0.963 / 0.792
+  rotation    300   0.02      40        100%           95%                     0.968 / 0.762
+  rotation    300   0.05      40        100%           95%                     0.934 / 0.033
+  rotation    300   0.10      40        100%           88%                     0.918 / 0.455
+  loop        300   0.00      40        100%          100%                     1.000 / 1.000
+  loop        300   0.02      40        100%          100%                     1.000 / 1.000
+  loop        300   0.05      40        100%          100%                     1.000 / 1.000
+  fibword     300   0.00      40        100%          100%                     0.998 / 0.990
+  fibword     300   0.05      40        100%          100%                     0.997 / 0.990
+
+2  how short can the window be?  (rotation, K=3, no noise, 40 trials each)
+  N=24   recognised   82%   right family   60%   predict next 400 correct 0.551
+  N=30   recognised   98%   right family   75%   predict next 400 correct 0.536
+  N=40   recognised  100%   right family   85%   predict next 400 correct 0.587
+  N=60   recognised  100%   right family   92%   predict next 400 correct 0.717
+  N=100  recognised  100%   right family   92%   predict next 400 correct 0.841
+  N=200  recognised  100%   right family   98%   predict next 400 correct 0.945
+
+3  false alarms: random sequences that should come out 'unknown'  (200 each)
+  K=2 N=40   falsely recognised 0/200
+  K=2 N=100  falsely recognised 0/200
+  K=2 N=300  falsely recognised 0/200
+  K=3 N=40   falsely recognised 0/200
+  K=3 N=100  falsely recognised 0/200
+  K=3 N=300  falsely recognised 0/200
+  K=5 N=40   falsely recognised 0/200
+  K=5 N=100  falsely recognised 0/200
+  K=5 N=300  falsely recognised 0/200
+
+4  sequences that are structured but NOT in the engine's families (should be unknown, or a fair description)
+  original Pi-Phi sieve (floor(n*2pi/phi^2) mod 3)    recognised (loop, mismatches 0)
+      loop word: [2, 1, 1, 0, 2]
+  n*n mod 3                                           recognised (loop, mismatches 0)
+      loop word: [1, 1, 0]
+  primes indicator (K=2)                              recognised (loop, mismatches 24)
+      loop word: [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0]
+  digits of pi, mod 3                                 unknown
