@@ -1,0 +1,9 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Android system files (avoids cluttering from phone file managers)
+.DS_Store
+Thumbs.db
+.thumbnails/
